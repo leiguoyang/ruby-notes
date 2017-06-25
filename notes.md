@@ -40,7 +40,8 @@ say("Why do you want to learn Ruby? Do you want to make apps with it?")
 
 那为什么`puts`, `print`和`p`这些method不用()？奇怪。
 
-从一个method会return回来什么值呢？一个method中的最后一个表达式会自动作为返回值。通常，不用写return这个关键词。如
+### Return Value
+从一个method会返回什么值呢？一个method中的最后一个表达式会自动作为返回值。通常，不用写return这个关键词。如
 
 ```ruby
 def buy?(money)
@@ -49,10 +50,55 @@ def buy?(money)
 end
 ```
 
-### Instance Method
-### Class Method
+### Optional Parameter
+Optional parameter指非必须的参数，当你调用一个有optional parameter
+的method时，你可以提供argument或不提供。下面定义一个有optional parameter的method。
+
+```ruby
+def order(juice = "orange")
+  puts "This is your #{juice}"
+end
+
+# call the method with no argument
+order
+```
 
 ## Class
+定义一个类，你可以用这个类来建立很多个不同的例子。如定义一个叫Character类，你可以建立多个有不同名字，性格的例子。
+
+### Defining a Class
+类的名称必须以大写字母开头，如一个叫Character的类。在类里面，可使用initialize这个method来初始化一些变量(instance variable)，及定义一些instance method。
+
+```ruby
+class Character
+  def initialize(name, birthplace, height)
+    @name = name
+    @birthplace = birthplace
+    @height = height
+  end
+
+  def say(message)
+    # code to perform the say
+  end
+end
+```
+
+在上面这个例子, @name, @birthplace和@height叫做instance variable，而say叫做intance method.
+
+### Creating an Instance
+建立一个例子。
+
+```ruby
+# create a new instance of the Character class
+liubei = Character.new("刘备", "somewhere", "7尺");
+# call an instance method
+liubei.say("何不。。。")
+```
+
+### Attribute Accessor Methods
+
+### Inheritance, Subclass and Superclass
+### Class Method
 
 ## Block
 
