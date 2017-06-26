@@ -98,6 +98,16 @@ liubei.say("何不。。。")
 ### Attribute Accessor Methods
 
 ### Inheritance, Subclass and Superclass
+在superclass的基础上，建立一个subclass。在以下的例子中，Soldier 是一个subclass, 继承于Character这个superclass。
+
+```ruby
+class Soldier < Character
+  def march(direction)
+    # code to march somewhere
+  end
+end
+```
+
 ### Class Method
 
 ## Block
