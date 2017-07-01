@@ -168,6 +168,59 @@ end
 ```
 
 ## Hash
+Hash是一个key-value对的集合.
+
+### Defining a Hash
+可使用hash literal {}方式来建立一个hash，或使用Hash这个类来建立一个hash。
+
+```ruby
+city = {
+  name: "广州",
+  population: 2000,
+  zones: ["天河", "越秀"]
+}
+```
+
+使用Hash这个类。
+
+```ruby
+city = Hash.new
+```
+
+### Accessing the Key's Value
+使用[]获取hash里的key的value。
+
+```ruby
+# get the city name
+city[:name]
+# get the city zones
+city[:zones]
+```
+
+当你尝试去获取一个不存在的key时，返回值为nil。
+
+```ruby
+# return nil because location is not a key of the city
+city["location"]
+```
+
+### Adding new Key
+同样使用[]来增加新的key。
+
+```ruby
+city[:weather] = "Sunny"
+```
+
+### Setting the Default value for a key
+设置key的默认值。
+
+```ruby
+bookself = Hash.new(0)
+# now if try to get access to a key called color, you get 0 instead of nil
+bookself["color"]
+```
+
+### Keyword argument
 
 ## Mixin
 
