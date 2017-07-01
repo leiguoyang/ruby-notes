@@ -108,11 +108,68 @@ class Soldier < Character
 end
 ```
 
+### The Super Keyword
 ### Class Method
 
 ## Block
+代码块，你可以在一个method中调用代码块。代码块看起来和method很相似，都可以接受参数和不接受参数， 和返回值。不同之一是代码块没有名字。
+
+代码块出现在调用一个method的后面。
+
+### Defining a Block
+代码块有两种形式。一种是`do...end`, 另一种是`{}`。
+
+```ruby
+my_method do
+  puts "yield to a block"
+end
+```
+
+```ruby
+my_method { puts "yield to a block" }
+
+```
+
+以上的例子中，代码块没有参数。下面的例子中，代码块包含参数，注意参数是用`||`包围着，与method用`()`不同。
+
+```ruby
+# define a User class
+class User
+  attr_accessor :name, :description
+
+  def initialize(name, description)
+    @name = name
+    @description = description
+  end
+
+  def login
+    # code to log in
+  end
+end
+
+# an array to store the User
+users = []
+
+# create some User instance
+users.push(User.new("Mary", "Hello, I am..."))
+users.push(User.new("Lucy", "Hi, Nice to meet you."))
+
+# greeting each user
+users.each do |user|
+  puts "Hi #{user.name}, Welcome to the Ruby zone and happy coding."
+end
+```
+
+### Yielding to a Block
+定义一个调用代码块的method
+
+```ruby
+# please define a method which illustrates the meaningful use of a block
+```
 
 ## Hash
 
 ## Mixin
+
+## Flow Control
 
