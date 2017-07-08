@@ -96,6 +96,55 @@ liubei.say("何不。。。")
 ```
 
 ### Attribute Accessor Methods
+你不可以直接来获取或更改对象的instance variable, 如在上面的`liubei`对象中，如果你输入如下代码，将会出错。
+
+```ruby
+# try to access the instance variable called @birthplace
+liubei.@birthplace
+```
+
+你必须在类里面定义一些方法来获取或更改instance variable。下面在Character这个类里面定义一些方法来获取和更改instance variable。
+
+```ruby
+class Character
+  def initialize(name, birthplace, height)
+    @name = name
+    @birthplace = birthplace
+    @height = height
+  end
+
+  # an attribute reader method which returns the @name
+  def name
+    @name
+  end
+
+  # an attribute writer method which sets the @name
+  def name=(name)
+    @name = name
+  end
+
+  def say(message)
+    # code to perform the say
+  end
+end
+
+# now if you run these code, you can get access to the instance variable @name
+liubei.name
+# reset the @name
+liubei.name = "玄德"
+```
+
+Ruby提供了3个方法，可以快捷地定义一些attribute accessor method
+
+1. `attr_accessor => 相当于同时包含attr_reader和attr_writer两个方法`
+2. `attr_reader`
+3. `attr_writer`
+
+在上面Character这个类里，你可以直接写
+
+```ruby
+attr_accessor :name
+```
 
 ### Inheritance, Subclass and Superclass
 在superclass的基础上，建立一个subclass。在以下的例子中，Soldier 是一个subclass, 继承于Character这个superclass。
