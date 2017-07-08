@@ -237,11 +237,35 @@ bookself["color"]
 ### Keyword argument
 
 ## Module as mixin
-模块是method的集合，很灵活。类是模块的一种。你可使用模块来扩充类。
+模块是一些方法的集合，很灵活。类是模块的一种。你可使用模块来扩充类。
 
 ### Defining a module
+
+```ruby
+module MyModule
+  def first_method
+    puts "fist_method called"
+  end
+  
+  def second_method
+    puts "second_method called"
+  end
+end
+```
+
 ### Mixing in a module
+使用include这个关键词在类里面添加一个模块。模块里的方法都变成类里面的实例方法。
+
+```ruby
+class MyClass
+  include MyModule
+end
+```
+
 ### Inheritance sequence
+当你调用一个对象的实例方法时，Ruby首先会在这个对象的类里寻找这个方法。当找不到时，它先会从已添加的模块里找，找到了即停止。如果找不到，会接着在superclass里找。
 
 ## Flow Control
+
+## Variable, constant and scope
 
