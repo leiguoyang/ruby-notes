@@ -161,10 +161,24 @@ end
 ```
 
 ### Yielding to a Block
-定义一个调用代码块的method
+定义一个调用代码块的method。
 
 ```ruby
-# please define a method which illustrates the meaningful use of a block
+# accept an array and do sth with each element
+def each_it(array)
+  index = 0
+  while index < array.length
+    yield(array[index])
+    index += 1
+  end
+end
+
+# call each_it
+prices = [9, 7, 9]
+# say now there is a 10% discount, output the discount
+each_it(prices) do |price|
+  puts "You save #{price * 0.1}."
+end
 ```
 
 ## Hash
@@ -222,7 +236,12 @@ bookself["color"]
 
 ### Keyword argument
 
-## Mixin
+## Module as mixin
+模块是method的集合，很灵活。类是模块的一种。你可使用模块来扩充类。
+
+### Defining a module
+### Mixing in a module
+### Inheritance sequence
 
 ## Flow Control
 
