@@ -317,4 +317,4 @@ end
 ## Flow Control
 
 ## Variable, constant and scope
-
+global variable, local variable, instance variable, and class variable
