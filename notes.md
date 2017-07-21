@@ -31,6 +31,8 @@
     - [Inheritance sequence](#inheritance-sequence)
   - [Flow Control](#flow-control)
   - [Variable, constant and scope](#variable-constant-and-scope)
+    - [Variable](#variable)
+    - [Constant](#constant)
 
 <!-- TOC END -->
 
@@ -350,4 +352,16 @@ end
 ## Flow Control
 
 ## Variable, constant and scope
-global variable, local variable, instance variable, and class variable
+
+### Variable
+需用不同的符号来表示不同的变量和作用域。
+
+Variable | Sign | Scope
+--- | --- | ---
+global variable | $name | global
+local variable | name | local
+instance variable | @name | instance method
+class variable | @@name | class method and instance method
+class instance variable | @name | class method
+
+### Constant
