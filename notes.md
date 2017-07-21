@@ -1,6 +1,39 @@
 # Ruby notes
 这是我学习Ruby的笔记，我用的书是`Head First Ruby`，从2017年6月14日正式开始学。
 
+## Table of content
+<!-- TOC START min:2 max:3 link:true update:true -->
+  - [Table of content](#table-of-content)
+  - [Method](#method)
+    - [Defining a Method](#defining-a-method)
+    - [Calling a Method](#calling-a-method)
+    - [Return Value](#return-value)
+    - [Optional Parameter](#optional-parameter)
+  - [Class](#class)
+    - [Defining a Class](#defining-a-class)
+    - [Creating an Instance](#creating-an-instance)
+    - [Attribute Accessor Methods](#attribute-accessor-methods)
+    - [Inheritance, Subclass and Superclass](#inheritance-subclass-and-superclass)
+    - [The Super Keyword](#the-super-keyword)
+    - [Class Method](#class-method)
+  - [Block](#block)
+    - [Defining a Block](#defining-a-block)
+    - [Yielding to a Block](#yielding-to-a-block)
+  - [Hash](#hash)
+    - [Defining a Hash](#defining-a-hash)
+    - [Accessing the Key's Value](#accessing-the-keys-value)
+    - [Adding new Key](#adding-new-key)
+    - [Setting the Default value for a key](#setting-the-default-value-for-a-key)
+    - [Keyword argument](#keyword-argument)
+  - [Module as mixin](#module-as-mixin)
+    - [Defining a module](#defining-a-module)
+    - [Mixing in a module](#mixing-in-a-module)
+    - [Inheritance sequence](#inheritance-sequence)
+  - [Flow Control](#flow-control)
+  - [Variable, constant and scope](#variable-constant-and-scope)
+
+<!-- TOC END -->
+
 ## Method
 一个method其实就是可以完成某一任务的功能块，可以多次被利用。就像你造了一个锤子，你可以用来敲核桃，也可以用来锤其它东西。为什么叫method呢？ 可不可以叫function?
 
@@ -295,7 +328,7 @@ module MyModule
   def first_method
     puts "fist_method called"
   end
-  
+
   def second_method
     puts "second_method called"
   end
