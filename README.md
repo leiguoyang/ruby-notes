@@ -1,9 +1,8 @@
 # Ruby notes
-这是我学习Ruby的笔记，我用的书是`Head First Ruby`，从2017年6月14日正式开始学。
+这是我学习Ruby的笔记，从2017年6月14日正式开始学。
 
 ## Table of content
 <!-- TOC START min:2 max:3 link:true update:true -->
-  - [Table of content](#table-of-content)
   - [Method](#method)
     - [Defining a Method](#defining-a-method)
     - [Calling a Method](#calling-a-method)
@@ -19,6 +18,7 @@
   - [Block](#block)
     - [Defining a Block](#defining-a-block)
     - [Yielding to a Block](#yielding-to-a-block)
+    - [Lambda](#lambda)
   - [Hash](#hash)
     - [Defining a Hash](#defining-a-hash)
     - [Accessing the Key's Value](#accessing-the-keys-value)
@@ -196,22 +196,28 @@ end
 ### Class Method
 
 ## Block
-代码块，你可以在一个method中调用代码块。代码块看起来和method很相似，都可以接受参数和不接受参数， 和返回值。不同之一是代码块没有名字。
-
-代码块出现在调用一个method的后面。
+代码块，你可以在一个method中调用代码块。代码块看起来和method很相似，都可以接受参数和不接受参数，和返回值。不同之一是代码块没有名字。
 
 ### Defining a Block
 代码块有两种形式。一种是`do...end`, 另一种是`{}`。
 
 ```ruby
-my_method do
+do
   puts "yield to a block"
 end
 ```
 
 ```ruby
-my_method { puts "yield to a block" }
+{ puts "yield to a block" }
+```
 
+block通常与method一起使用，下面定义一个含有block作为参数的method.
+
+```ruby
+def method_name(&block_name)
+  # call the block
+  block_name.call
+end
 ```
 
 以上的例子中，代码块没有参数。下面的例子中，代码块包含参数，注意参数是用`||`包围着，与method用`()`不同。
@@ -264,6 +270,10 @@ each_it(prices) do |price|
   puts "You save #{price * 0.1}."
 end
 ```
+
+### Lambda
+
+
 
 ## Hash
 Hash是一个key-value对的集合.
