@@ -2,12 +2,18 @@
 这是我学习Ruby的笔记，从2017年6月14日正式开始学。
 
 ## Table of content
-<!-- TOC START min:2 max:3 link:true update:true -->
   - [Method](#method)
     - [Defining a Method](#defining-a-method)
     - [Calling a Method](#calling-a-method)
     - [Return Value](#return-value)
     - [Optional Parameter](#optional-parameter)
+  - [Parameter](#parameter)
+    - [Optional Parameter](#optional-parameter)
+    - [Required parameter](#required-parameter)
+    - [Array parameter](#array-parameter)
+    - [Keyword parameter](#keyword-parameter)
+    - [Block parameter](#block-parameter)
+    - [Parameter order](#parameter-order)
   - [Class](#class)
     - [Defining a Class](#defining-a-class)
     - [Creating an Instance](#creating-an-instance)
@@ -34,10 +40,8 @@
     - [Variable](#variable)
     - [Constant](#constant)
 
-<!-- TOC END -->
-
 ## Method
-一个method其实就是可以完成某一任务的功能块，可以多次被利用。就像你造了一个锤子，你可以用来敲核桃，也可以用来锤其它东西。为什么叫method呢？ 可不可以叫function?
+一个method其实就是可以完成某一任务的功能块，可以多次被利用。
 
 ### Defining a Method
 一个method可以包含parameter, 或不包含parameter.
@@ -46,7 +50,7 @@
 
 ```ruby
 def say(message)
-  puts message
+  message
 end
 ```
 
@@ -59,10 +63,10 @@ end
 ```
 
 ### Calling a Method
-当一个method没有参数时，直接写method的名字即可，无需小括号()。如
+当一个method没有参数时，直接写method的名字即可，可不写小括号()。如
 
 ```ruby
-# call a method without any parameter, please omit the parentheses
+# call a method without any parameter
 sit
 ```
 
@@ -85,6 +89,8 @@ def buy?(money)
 end
 ```
 
+## Parameter
+
 ### Optional Parameter
 Optional parameter指非必须的参数，当你调用一个有optional parameter
 的method时，你可以提供argument或不提供。下面定义一个有optional parameter的method。
@@ -97,6 +103,23 @@ end
 # call the method with no argument
 order
 ```
+
+### Required parameter
+上面的`say` method的`message`参数就是一个required parameter。
+
+### Array parameter
+一个array parameter的前面以`*`开头。在如下例子中，`params`就是一个array parameter，所有跟着`required_param`的参数都会装进这个叫params的数组里。
+
+```ruby
+def method_name(required_param, *params)
+  # params is an array
+  params
+end
+```
+
+### Keyword parameter
+### Block parameter
+### Parameter order
 
 ## Class
 定义一个类，你可以用这个类来建立很多个不同的例子。如定义一个叫Character类，你可以建立多个有不同名字，性格的例子。
@@ -327,8 +350,6 @@ bookself = Hash.new(0)
 # now if try to get access to a key called color, you get 0 instead of nil
 bookself["color"]
 ```
-
-### Keyword argument
 
 ## Module as mixin
 模块是一些方法的集合，很灵活。类是模块的一种。你可使用模块来扩充类。
