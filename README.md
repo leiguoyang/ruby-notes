@@ -7,6 +7,7 @@
     - [Calling a Method](#calling-a-method)
     - [Return Value](#return-value)
     - [Optional Parameter](#optional-parameter)
+    - [Private method](#private-method)
   - [Parameter](#parameter)
     - [Optional Parameter](#optional-parameter)
     - [Required parameter](#required-parameter)
@@ -88,6 +89,9 @@ def buy?(money)
   money >= 10
 end
 ```
+
+## Private method
+You cannot call private method directly on object. They can only be called inside other method.
 
 ## Parameter
 
