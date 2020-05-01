@@ -93,6 +93,29 @@ end
 ## Private method
 You cannot call private method directly on object. They can only be called inside other method.
 
+```ruby
+class Message
+	attr_accessor :text
+
+	def initialize(text) 
+		@text = text
+	end
+
+	def send(from, to)
+
+	end
+
+	def call_private_method
+		secret
+	end
+
+	private
+		def secret
+			'This is a private method and you cannot call it on object directly.'
+		end
+end
+```
+
 ## Parameter
 
 ### Optional Parameter
