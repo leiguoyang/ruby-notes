@@ -32,7 +32,7 @@
     - [Adding new Key](#adding-new-key)
     - [Setting the Default value for a key](#setting-the-default-value-for-a-key)
     - [Keyword argument](#keyword-argument)
-  - [Module as mixin](#module-as-mixin)
+  - [Module](#module)
     - [Defining a module](#defining-a-module)
     - [Mixing in a module](#mixing-in-a-module)
     - [Inheritance sequence](#inheritance-sequence)
@@ -378,7 +378,10 @@ bookself = Hash.new(0)
 bookself["color"]
 ```
 
-## Module as mixin
+## Module
+
+Modules serve two purposes in Ruby, namespacing and mix-in functionality
+
 模块是一些方法的集合，很灵活。类是模块的一种。你可使用模块来扩充类。
 
 ### Defining a module
@@ -396,7 +399,7 @@ end
 ```
 
 ### Mixing in a module
-使用include这个关键词在类里面添加一个模块。模块里的方法都变成类里面的实例方法。
+使用`include`这个关键词在类里面添加一个模块。模块里的方法都变成类里面的实例方法。
 
 ```ruby
 class MyClass
